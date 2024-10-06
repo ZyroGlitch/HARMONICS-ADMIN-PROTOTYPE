@@ -13,31 +13,42 @@
 
             <!-- Home Dropdown Menu -->
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="{{ route('view.dashboard') }}" class="nav-button @if(request()->is('dashboard')) current @endif"><i class="fa-solid fa-chart-pie me-2"></i>
+                <a href="{{ route('view.dashboard') }}"
+                    class="nav-button @if (request()->is('dashboard')) current @endif"><i
+                        class="fa-solid fa-chart-pie me-2"></i>
                     <span>Dashboard</span></a>
             </li>
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="{{ route('view.orders') }}" class="nav-button @if(request()->is('orders')) current @endif"><i class="fa-solid fa-cart-shopping me-2"></i>
+                <a href="{{ route('view.orders') }}" class="nav-button @if (request()->is('orders') || request()->is('viewOrder')) current @endif"><i
+                        class="fa-solid fa-cart-shopping me-2"></i>
                     <span>Orders</span></a>
             </li>
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="{{ route('view.product') }}" class="nav-button @if(request()->is('product')) current @endif"><i class="fa-solid fa-bag-shopping me-2"></i>
+                <a href="{{ route('view.product') }}" class="nav-button @if (request()->is('product')) current @endif"><i
+                        class="fa-solid fa-bag-shopping me-2"></i>
                     <span>Product</span></a>
             </li>
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="{{ route('view.salesReport') }}" class="nav-button @if(request()->is('salesReport')) current @endif"><i class="fa-solid fa-chart-line me-2"></i>
+                <a href="{{ route('view.salesReport') }}"
+                    class="nav-button @if (request()->is('salesReport')) current @endif"><i
+                        class="fa-solid fa-chart-line me-2"></i>
                     <span>Sales Report</span></a>
             </li>
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="{{ route('view.customers') }}" class="nav-button @if(request()->is('customers')) current @endif"><i class="fa-solid fa-users me-2"></i>
+                <a href="{{ route('view.customers') }}"
+                    class="nav-button @if (request()->is('customers') || request()->is('viewProfile')) current @endif"><i
+                        class="fa-solid fa-users me-2"></i>
                     <span>Customers</span></a>
             </li>
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="{{ route('view.messages') }}" class="nav-button @if(request()->is('messages')) current @endif"><i class="fa-solid fa-comment-dots me-2"></i>
+                <a href="{{ route('view.messages') }}"
+                    class="nav-button @if (request()->is('messages')) current @endif"><i
+                        class="fa-solid fa-comment-dots me-2"></i>
                     <span>Messages</span></a>
             </li>
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="#" class="nav-button @if(request()->is('logout')) current @endif"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>
+                <a href="#" class="nav-button @if (request()->is('logout')) current @endif"><i
+                        class="fa-solid fa-arrow-right-from-bracket me-2"></i>
                     <span>Sign Out</span></a>
             </li>
         </nav>

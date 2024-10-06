@@ -5,7 +5,7 @@
         <div class="card-body">
             <div style="max-height:450px;overflow-y: auto;overflow-x: hidden;">
                 <table class="table table-hover">
-                    <thead class="text-center">
+                    <thead class="text-center table-dark">
                         <tr>
                             <th>Date</th>
                             <th>Total Orders</th>

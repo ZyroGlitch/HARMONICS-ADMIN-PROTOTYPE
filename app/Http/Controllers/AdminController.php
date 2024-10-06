@@ -41,4 +41,15 @@ class AdminController extends Controller
         return redirect(route('view.orders'))
         ->with('edit','Order Status Updated!');
    }
+
+   // PRODUCT CONTROLLER
+   public function editProduct(){
+        return redirect(route('view.product'))
+        ->with('edit','Product Information Updated!');
+   }
+
+   // CUSTOMER CONTROLLER
+   public function viewProfile(){
+        return view('customers_components.profile');
+   }
 }

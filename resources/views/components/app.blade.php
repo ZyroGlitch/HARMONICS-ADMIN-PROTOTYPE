@@ -77,7 +77,7 @@
             }
         }
 
-        .nav-button{
+        .nav-button {
             width: 100%;
             color: black;
             background: white;
@@ -95,8 +95,8 @@
 
         /* Active class for the current page */
         .current {
-        color: white;
-        background: black;
+            color: white;
+            background: black;
         }
 
 
@@ -131,7 +131,6 @@
         p {
             margin: 0px;
         }
-
     </style>
 </head>
 

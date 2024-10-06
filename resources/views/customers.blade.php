@@ -9,12 +9,12 @@
             </form>
         </div>
     </div>
-    
+
     <div class="card shadow-md">
         <div class="card-body">
             <div style="max-height:405px;overflow-y: auto;overflow-x: hidden;">
                 <table class="table table-hover">
-                    <thead class="text-center">
+                    <thead class="text-center table-dark">
                         <tr>
                             <th>Customer Name</th>
                             <th>Email</th>
@@ -39,7 +39,8 @@
                                 <td>07 / 29 / 23</td>
                                 <td>
                                     <div class="d-grid">
-                                        <a href="#" class="btn btn-primary btn-sm fw-bold">VIEW PROFILE</a>
+                                        <a href="{{ route('view.viewProfile') }}"
+                                            class="btn btn-primary btn-sm fw-bold">VIEW PROFILE</a>
                                     </div>
                                 </td>
                             </tr>

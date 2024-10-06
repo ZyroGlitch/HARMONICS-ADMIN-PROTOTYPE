@@ -28,3 +28,12 @@ Route::get('/viewOrder', [AdminController::class,'viewOrder'])
 
 Route::post('/editOrder', [AdminController::class,'editOrder'])
 ->name('view.editOrder');
+
+
+// PRODUCT ROUTE
+Route::post('/editProduct', [AdminController::class,'editProduct'])
+->name('view.editProduct');
+
+// CUSTOMER ROUTE
+Route::get('/viewProfile', [AdminController::class,'viewProfile'])
+->name('view.viewProfile');
