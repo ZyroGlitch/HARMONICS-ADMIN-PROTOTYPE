@@ -5,7 +5,7 @@
         <!-- Sidebar -->
         <nav id="sidebar" class="shadow-sm" style="background:#FEFEFF">
             <div class="sidebar-header d-flex align-items-center p-3">
-                <img src="assets/logo.png" alt="LOGO" class="object-contain text-center me-2"
+                <img src="assets/logo1.png" alt="LOGO" class="object-contain text-center rounded-pill shadow-sm me-2"
                     style="width:50px;height:50px;">
                 <h4 class="fw-bold mb-0">HARMONICS</h4>
             </div>
@@ -47,7 +47,7 @@
                     <span>Messages</span></a>
             </li>
             <li class="d-flex justify-content-start align-items-center p-3" style="height:50px;">
-                <a href="#" class="nav-button @if (request()->is('logout')) current @endif"><i
+                <a href="{{ route('view.login') }}" class="nav-button @if (request()->is('/')) current @endif"><i
                         class="fa-solid fa-arrow-right-from-bracket me-2"></i>
                     <span>Sign Out</span></a>
             </li>
@@ -59,7 +59,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-b-2 shadow-sm">
                 <div class="container-fluid d-flex justify-content-end">
                     <div class="d-flex align-items-center">
-                        <img src="assets/default.jpg" alt="img" class="object-fit rounded shadow-md me-3"
+                        <img src="assets/photo.png" alt="img" class="object-fit rounded shadow-md me-3"
                             style="width:50px;height:50px;">
 
                         <div>

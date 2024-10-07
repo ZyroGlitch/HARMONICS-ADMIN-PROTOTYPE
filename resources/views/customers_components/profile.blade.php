@@ -13,7 +13,7 @@
         <div class="col-lg-4 col-md-4">
             <div class="card shadow-sm p-3">
                 <div class="card-body text-center">
-                    <img src="assets/default.jpg" alt="profile img" class="object-contain rounded shadow-sm mb-3"
+                    <img src="assets/photo.png" alt="profile img" class="object-contain rounded shadow-sm mb-3"
                         style="width:180px;height:180px;">
 
                     <h4 class="fw-bold">My Profile</h4>

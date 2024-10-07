@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     // VIEW CONTROLLERS
+    public function login(){
+        return view('login');
+   }
+
+   public function register(){
+        return view('register');
+   }
+
+   public function loaders(){
+        return view('loader');
+   }
+   
    public function dashboard(){
         return view('dashboard');
    }
@@ -31,6 +43,31 @@ class AdminController extends Controller
         return view('messages');
    }
 
+
+
+   // LOGIN AUTHENTICATION CONTROLLER
+   public function loginAuth(){
+          $existEmail = 'admin@gmail.com';
+          $existPassword = 'admin123';
+
+          if($existEmail == request('email') && $existPassword == request('password')){
+               return redirect(route('view.loaders'));
+          }else{
+               return redirect(route('view.login'))
+               ->with('error','Incorrect email or password!');
+          }
+   }
+
+   // REGISTER CONTROLLER
+   public function registerAccount(){
+          return redirect(route('view.loaders'));
+   }
+
+   // FORGOT PASSWORD CONTROLLER
+   public function forgotPassword(){
+          return redirect(route('view.login'))
+          ->with('resetPass','Password Successfully Updated.');
+   }
 
    // ORDERS CONTROLLER
    public function viewOrder(){
