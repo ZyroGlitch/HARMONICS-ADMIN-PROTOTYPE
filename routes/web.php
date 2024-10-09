@@ -44,7 +44,6 @@ Route::post('/forgotPassword', [AdminController::class,'forgotPassword'])
 ->name('view.forgotPassword');
 
 
-
 // ORDERS ROUTE
 Route::get('/viewOrder', [AdminController::class,'viewOrder'])
 ->name('view.viewOrder');
@@ -57,6 +56,20 @@ Route::post('/editOrder', [AdminController::class,'editOrder'])
 Route::post('/editProduct', [AdminController::class,'editProduct'])
 ->name('view.editProduct');
 
+// SALES REPORT ROUTE
+Route::get('/viewSalesReport', [AdminController::class,'viewSalesReport'])
+->name('view.viewSalesReport');
+
+Route::get('/download', [AdminController::class,'download'])
+->name('view.download');
+
 // CUSTOMER ROUTE
 Route::get('/viewProfile', [AdminController::class,'viewProfile'])
 ->name('view.viewProfile');
+
+// MESSAGES ROUTE
+Route::get('/viewMessage', [AdminController::class,'viewMessage'])
+->name('view.viewMessage');
+
+Route::post('/sendResponse', [AdminController::class,'sendResponse'])
+->name('view.sendResponse');

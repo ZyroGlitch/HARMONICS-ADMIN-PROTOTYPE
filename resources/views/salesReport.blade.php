@@ -11,7 +11,6 @@
                             <th>Total Orders</th>
                             <th>Total Products Sold</th>
                             <th>Total Revenue</th>
-                            <th>Average Order Value</th>
                             <th>Best-Selling Product</th>
                             <th>Actions</th>
                         </tr>
@@ -26,12 +25,13 @@
                                 <td>75</td>
                                 <td>450</td>
                                 <td>₱1,200,000</td>
-                                <td>₱16,000</td>
                                 <td>Electric Guitar</td>
-                                <td>
-                                    <div class="d-grid">
-                                        <a href="#" class="btn btn-primary btn-sm fw-bold">View Report Details</a>
-                                    </div>
+                                <td class="d-flex align-items-center gap-3">
+                                    <a type="button" href="{{ route('view.viewSalesReport') }}"
+                                        class="btn btn-primary btn-sm fw-bold w-100" target="_blank">View</a>
+
+                                    <a type="button" href="{{ route('view.download') }}"
+                                        class="btn btn-dark btn-sm fw-bold w-100">Download</a>
                                 </td>
                             </tr>
 

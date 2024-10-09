@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
@@ -85,8 +86,32 @@ class AdminController extends Controller
         ->with('edit','Product Information Updated!');
    }
 
+   // SALES REPORT CONTROLLER
+   public function viewSalesReport(){
+        return view('salesReport_components.viewInvoice');
+   }
+
+   public function download(){
+        $pdf = Pdf::loadView('salesReport_components.viewInvoice');
+        return $pdf->download('Invoice.pdf');
+    }
+
    // CUSTOMER CONTROLLER
    public function viewProfile(){
         return view('customers_components.profile');
+   }
+
+   public function downloadInvoice(){
+        return view('customers_components.profile');
+   }
+
+   // MESSAGE CONTROLLER
+   public function viewMessage(){
+        return view('message_components.view');
+   }
+
+   public function sendResponse(){
+        return redirect(route('view.messages'))
+        ->with('success','Message Sent Successfully.');
    }
 }

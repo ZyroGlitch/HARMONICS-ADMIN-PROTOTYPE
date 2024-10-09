@@ -39,11 +39,9 @@
                                 <td>Order Issue</td>
                                 <td>07 / 29 / 23</td>
                                 <td class="status text-danger">Unresolved</td> <!-- Default red for Unresolved -->
-                                <td>
-                                    <div class="d-flex justify-content-center align-items-center gap-2">
-                                        <a href="#" class="btn btn-primary btn-sm fw-bold w-100">View</a>
-                                        <a href="#" class="btn btn-success btn-sm fw-bold w-100">Respond</a>
-                                    </div>
+                                <td class="d-grid">
+                                    <a href="{{ route('view.viewMessage') }}"
+                                        class="btn btn-primary btn-sm fw-bold w-100">View</a>
                                 </td>
                             </tr>
                             <?php $totalData++; ?>
@@ -53,6 +51,17 @@
             </div>
         </div>
     </div>
+
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent Successfully.',
+                });
+            });
+        </script>
+    @endif
 
     <script>
         document.getElementById('statusFilter').addEventListener('change', function() {
