@@ -96,15 +96,27 @@
                 type: 'bar',
                 data: {
                     labels: [
-                        'January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'
+                        'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                        'October', 'November', 'December'
                     ],
                     datasets: [{
                         label: '',
                         data: [
-                            1000, 2000, 3000, 1500, 5000, 3500, 2500, 4000,1000, 2000, 3000, 1500
+                            1000, 2000, 3000, 1500, 5000, 3500, 2500, 4000, 1000, 2000, 3000, 1500
                         ],
                         backgroundColor: [
-                            'purple',
+                            '#A5B68D',
+                            '#624E88',
+                            '#E5D9F2',
+                            '#C96868',
+                            '#D2E0FB',
+                            '#295F98',
+                            '#FF8A8A',
+                            '#A28B55',
+                            '#BC9F8B',
+                            '#E1AFD1',
+                            '#ACE1AF',
+                            '#9CAFAA',
                         ],
                         borderWidth: 1
                     }]

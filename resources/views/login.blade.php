@@ -12,7 +12,7 @@
             </linearGradient>
             <path id="wave" fill="url(#bg)"
                 d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
-                                                                                                                                             s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+                                                                                                                                                                                                                                                 s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
         </defs>
         <g>
             <use xlink:href='#wave' opacity=".3">
@@ -62,8 +62,9 @@
                         </div>
 
                         <p class="text-end mb-4">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPass"
-                                style="text-decoration: none">Forgot Password?</a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#forgotPass"
+                                style="text-decoration: none">Forgot
+                                Password?</a>
                         </p>
 
                         <div class="d-grid mb-3">
@@ -87,7 +88,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-light">
-                    <h1 class="modal-title fs-5" id="forgotPassLabel">Forgot Password</h1>
+                    <h1 class="modal-title fs-5" id="forgotPassLabel">Forgot Password?</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -99,48 +100,80 @@
                             <input type="email" class="form-control" id="emailInput" placeholder="you@example.com"
                                 required>
                         </div>
-                        <button type="submit" class="btn btn-primary fw-bold w-100">VERIFY EMAIL</button>
+                        <button type="button" class="btn btn-primary fw-bold w-100" data-bs-toggle="modal"
+                            data-bs-target="#resetPasswordModal">VERIFY EMAIL</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    @if (session('error'))
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Incorrect email or password!',
+
+    <!-- RESET PASSWORD Structure -->
+    <div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="{{ route('view.forgotPassword') }}" method="POST">
+                    @csrf
+
+                    <div class="modal-header bg-primary text-light">
+                        <h5 class="modal-title" id="exampleModalLabel">Reset Password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Your Reset Password Form Here -->
+
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">Enter New Password</label>
+                            <input type="password" class="form-control" id="newPassword">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        @if (session('error'))
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Incorrect email or password!',
+                    });
                 });
+            </script>
+        @endif
+
+        @if (session('resetPass'))
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Password Successfully Updated.',
+                    });
+                });
+            </script>
+        @endif
+
+        <script>
+            // JavaScript to toggle password visibility
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#password');
+
+            togglePassword.addEventListener('click', function(e) {
+                // Toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+
+                // Toggle the eye icon
+                this.classList.toggle('bi-eye');
+                this.classList.toggle('bi-eye-slash');
             });
         </script>
-    @endif
-
-    @if (session('resetPass'))
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Password Successfully Updated.',
-                });
-            });
-        </script>
-    @endif
-
-    <script>
-        // JavaScript to toggle password visibility
-        const togglePassword = document.querySelector('#togglePassword');
-        const password = document.querySelector('#password');
-
-        togglePassword.addEventListener('click', function(e) {
-            // Toggle the type attribute
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-
-            // Toggle the eye icon
-            this.classList.toggle('bi-eye');
-            this.classList.toggle('bi-eye-slash');
-        });
-    </script>
-@endsection
+    @endsection
